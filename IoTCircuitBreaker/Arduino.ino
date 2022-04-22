@@ -1,3 +1,6 @@
+#include<SoftwareSerial.h>
+SoftwareSerial MCU(10,11);
+
 #define NC_Relay 2
 #define NO Relay 3
 
@@ -9,7 +12,7 @@ char State = 'R'; //S -Set, R -Reset
 void setup() {
   Serial.begin(9600);
   Serial.println("Started...!");
-  
+  MCU.begin(9600);  
   pinMode(NO_Relay,OUTPUT);
   pinMode(NC_Relay,OUTPUT);
   
@@ -38,6 +41,7 @@ void loop() {
       }
     
     }
+  MCU.print("V"+String(Voltage)+"I"+String(Current)+'S'+State);
 }
 
 void Trip(){
