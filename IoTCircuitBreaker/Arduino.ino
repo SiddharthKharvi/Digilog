@@ -1,7 +1,7 @@
 #define NC_Relay 2
 #define NO Relay 3
 
-//#define AVolt A0
+#define AVolt A0
 #define ACrnt A1
 
 char State = 'R'; //S -Set, R -Reset 
